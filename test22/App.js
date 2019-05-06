@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import CommentInput from './CommentInput'
 import './App.css';
+// import BlackBorderContianer from './BlackBorderContianer'
 
-class Comment extends Component {
+class App extends Component {
+    render() {
+        return (
+            <div>
+              <BlackBorderContainer>
+                <div className='name'>My Name：Lucy</div>
+                <p className='age'>
+                  My Age：<span>12</span>
+                </p>
+              </BlackBorderContainer>
+            </div>
+        )
+    }
+}
 
+class BlackBorderContainer extends Component {
   render () {
-    const { comment } = this.props
-    return (
-      <div><CommentInput /></div>
-    )
+    return (<div>{this.props.children.map((el,i) => {
+      return (
+        <div key={i} className='border'>{el}</div>
+      )
+    })}</div>)
   }
 }
 
-export default Comment
+export default App
 
 
 // class App extends Component {
