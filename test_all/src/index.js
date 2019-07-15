@@ -1,14 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import ReactDOM from 'react-dom'
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-// import CommentApp from './CommentApp'
+import Header from './Header'
+import Content from './Content'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-// ReactDOM.render(<CommentApp />, document.getElementById('root'));
+class Index extends Component {
+  render () {
+    return (
+      <div>
+        <Header />
+        <Content />
+      </div>
+    )
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+ReactDOM.render(
+  <Index />,
+  document.getElementById('root')
+)
 serviceWorker.unregister();
